@@ -66,8 +66,8 @@ if targets_left:
 else:
     print(f"Training completed! All {len(killed_position)} targets hit.")
 
-for el in killed_position:
-    print(el)
+for elm in killed_position:
+    print(elm)
 
 
 
