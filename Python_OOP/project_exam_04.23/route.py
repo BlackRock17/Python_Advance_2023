@@ -1,0 +1,39 @@
+from project.core.validator import Validator
+
+
+class Route:
+
+    def __init__(self, start_point, end_point, length, route_id):
+        self.start_point = start_point
+        self.end_point = end_point
+        self.length = length
+        self.route_id = route_id
+        self.is_locked = False
+
+    @property
+    def start_point(self):
+        return self.__start_point
+
+    @start_point.setter
+    def start_point(self, value):
+        Validator.validate_name(value, "Start point cannot be empty!")
+        self.__start_point = value
+
+    @property
+    def end_point(self):
+        return self.__end_point
+
+    @end_point.setter
+    def end_point(self, value):
+        Validator.validate_name(value, "End point cannot be empty!")
+        self.__end_point = value
+
+    @property
+    def length(self):
+        return self.__length
+
+    @length.setter
+    def length(self, value):
+        Validator.validate_length_of_route(value, "Length cannot be less than 1.00 kilometer!")
+        self.__length = value
+
